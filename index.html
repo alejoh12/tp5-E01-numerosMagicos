@@ -60,20 +60,22 @@
                 </div>
             </article>
         </section>
-        <section>
+        <section class="cuadro">
             <article class="text-center my-3 articulo">
                 <button class="mx-2 btn btn-outline-danger" id="btnComenzar" onclick="">Presiona para comenzar el juego</button>
             </article>
             <article class="container border border-danger py-4">
-                <form class="row text-center">
-                    <div class="col-12 col-lg-7 text-lg-end mb-3 mb-lg-0">
-                        <label for="numeroIngresado" class="h5 font-logo">Ingrese un número</label>
-                        <input id="numeroIngresado" type="number" placeholder="Ej: 10" maxlength="2" minlength="1" required>
-                    </div>
+                <div class=" row text-center">
+                    <form class="col-12 col-lg-7 text-lg-end mb-3 mb-lg-0">
+                        <div class="">
+                            <label for="numeroIngresado" class="h5 font-logo">Ingrese un número</label>
+                            <input id="numeroIngresado" type="number" placeholder="Ej: 10" maxlength="2" minlength="1" required>
+                        </div>
+                    </form>
                     <div class="col-12 col-lg-1 text-lg-start">
-                        <button type="submit" class="mx-2 btn btn-danger">Adivinar</button>
+                        <button class="mx-2 btn btn-danger" id="btnAdivinar" onclick="">Adivinar</button>
                     </div>
-                </form>
+                </div>
             </article>
         </section>
     </main>

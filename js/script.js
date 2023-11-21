@@ -3,10 +3,9 @@
 Cuando el usuario adivine el numero mostrar un mensaje indicando al usuario que adivino el numero.
 */
 let numeroMagico = 0;
-
 const comenzar = () => {
     const etiquetaNueva = document.createElement("h3");
-    etiquetaNueva.innerHTML = `Excelente! Ahora ya puedes adivinar el número mágico. 😁`;
+    etiquetaNueva.innerHTML = `Perfecto! Ahora ya puedes adivinar el número mágico. 😁`;
     etiquetaNueva.className = `my-1 text-danger`;
 
     const seccionInformacionExtra = document.getElementsByClassName("articulo");
@@ -17,7 +16,32 @@ const comenzar = () => {
     console.log(numeroMagico);
 }
 
-const btnComenzar = document.getElementById("btnComenzar");
+const adivinar = () => {
+    const numero = document.getElementById("numeroIngresado").value;
+    console.log(numero);
+    if(numero == numeroMagico) {
+        alert("CORRECTO!!!! Felicitaciones, adivinaste el número mágico");
+        const etiquetaNueva = document.createElement("h2");
+        etiquetaNueva.innerHTML = `¡¡¡¡FELICITACIONES!!!! <br> Encontraste el número mágico <br> ACABAS DE GANAR EL JUEGO`;
+        etiquetaNueva.className = "text-danger text-center bg-dark my-2";
 
+        const seccionInformacionExtra = document.getElementsByClassName("cuadro");
+        seccionInformacionExtra[0].appendChild(etiquetaNueva);
+    }else if(numero > numeroMagico) {
+        alert(`No le acertaste al número mágico. Sigue intentando.
+        🙉 pssst
+        ~ El número mágico es menor que el número que ingresaste.
+        😉`);
+    }else {
+        alert(`No le acertaste al número mágico. Sigue intentando.
+        🙉 pssst
+        ~ El número mágico es mayor que el número que ingresaste.
+        😉`);
+    }
+}
+
+const btnComenzar = document.getElementById("btnComenzar");
 btnComenzar.addEventListener("click",comenzar);
 
+const btnAdivinar = document.getElementById("btnAdivinar");
+btnAdivinar.addEventListener("click",adivinar);
